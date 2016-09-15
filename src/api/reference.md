@@ -96,7 +96,7 @@ var html = fn(locals);
 Compile a Pug template from a file to a function which can be rendered multiple times with different locals.
 
 ```parameter-list
-source
+path
 ~ string
 ~ The path to a Pug file
 options
