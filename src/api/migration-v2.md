@@ -128,7 +128,7 @@ These options were used in conjunction with the removed [`Compiler`, `Lexer`, an
 
 #### <code>client</code>
 
-The `client` option was used for client function compilation. It was deprecated in favor of the <code>[compileClient]</code> function almost three years ago, and its use has been warned against since then.
+The `client` option was used for client function compilation. It was deprecated in favor of the <code>[compileClient]</code> function in 2013 year, and its use has been warned against since then.
 
 [doctypes]: https://www.npmjs.com/package/doctypes
 [js-stringify]: https://www.npmjs.com/package/js-stringify
