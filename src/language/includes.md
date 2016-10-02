@@ -32,7 +32,7 @@ footer#footer
 
 The path of the included file, if specified absolutely (e.g. `include /root.pug`), is resolved by prepending `options.basedir` to the file name provided. Otherwise, the path is relative to the current file being compiled.
 
-In Pug v1, if no file extension is given, `.pug` is automatically appended to the file name, but in Pug v2 this is behavior is removed.
+In Pug v1, if no file extension is given, `.pug` is automatically appended to the file name, but in Pug v2 this is behavior is deprecated.
 
 ## Including Plain Text
 
