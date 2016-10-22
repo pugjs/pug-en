@@ -21,7 +21,7 @@ Pug also supports block unbuffered code:
 
 ```pug-preview
 -
-  list = ["Uno", "Dos", "Tres",
+  var list = ["Uno", "Dos", "Tres",
           "Cuatro", "Cinco", "Seis"]
 each item in list
   li= item
