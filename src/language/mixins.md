@@ -77,6 +77,10 @@ mixin link(href, name)
 +link('/foo', 'foo')(class="btn")
 ```
 
+::: float info Note
+The syntax `+link(class="btn")` is also valid and equivalent to `+link()(class="btn")` since Pug try to detect if parentheses contents are attributes or arguments but we encourage you to use the second syntax as you pass explicitly no arguments and you ensure the first parenthesis is the arguments list.
+:::
+
 ## Rest Arguments
 
 You can write mixins that take an unknown number of arguments using the "rest arguments" syntax.  e.g.
