@@ -10,9 +10,7 @@ Tag attributes look similar to html (with optional comma), but their values are 
 
 ```pug-preview
 a(href='google.com') Google
-= '\n'
 a(class='button' href='google.com') Google
-= '\n'
 a(class='button', href='google.com') Google
 ```
 
@@ -82,8 +80,6 @@ If you would like to include variables in your attribute, you can do one of the 
    - var url = 'pug-test.html';
    a(href='/' + url) Link
 
-   = '\n'
-
    - url = 'https://example.com/'
    a(href=url) Another link
    ```
@@ -94,8 +90,7 @@ If you would like to include variables in your attribute, you can do one of the 
    - var btnType = 'info'
    - var btnSize = 'lg'
    button(type='button' class='btn btn-' + btnType + ' btn-' + btnSize)
-   = '\n'
-   button(type='button' class=`btn btn-${btnType} btn-${btnSize}`)
+      button(type='button' class=`btn btn-${btnType} btn-${btnSize}`)
    ```
 
 ## Unescaped Attributes
@@ -117,11 +112,8 @@ Boolean attributes are mirrored by Pug, and boolean values (`true` and `false`) 
 
 ```pug-preview
 input(type='checkbox' checked)
-= '\n'
 input(type='checkbox' checked=true)
-= '\n'
 input(type='checkbox' checked=false)
-= '\n'
 input(type='checkbox' checked=true.toString())
 ```
 
@@ -129,13 +121,9 @@ If the doctype is `html` Pug knows not to mirror the attribute and uses the ters
 
 ```pug-preview
 doctype html
-= '\n'
 input(type='checkbox' checked)
-= '\n'
 input(type='checkbox' checked=true)
-= '\n'
 input(type='checkbox' checked=false)
-= '\n'
 input(type='checkbox' checked=true && 'checked')
 ```
 
@@ -155,7 +143,6 @@ The `class` attribute can be a string (like any normal attribute) but it can als
 ```pug-preview
 - var classes = ['foo', 'bar', 'baz']
 a(class=classes)
-= '\n'
 //- the class attribute may also be repeated to merge arrays
 a.bang(class=classes class=['bing'])
 ```
@@ -165,7 +152,6 @@ It can also be an object mapping class names to true or false values, which is u
 ```pug-preview
 - var currentUrl = '/about'
 a(class={active: currentUrl === '/'} href='/') Home
-= '\n'
 a(class={active: currentUrl === '/about'} href='/about') About
 ```
 
