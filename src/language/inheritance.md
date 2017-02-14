@@ -123,3 +123,5 @@ This includes [unbuffered code](code.html#unbuffered-code), which can also conta
 
 * Add the variables to the Pug [options](../api/reference.html#options) object, or define them in unbuffered code in a parent template. The child template will inherit these variables.
 * Define the variables *in a block* in the child template. Extending templates must have at least one block, or it would be empty --- just define your variables there.
+
+For the same reason, Pug's [buffered comments](comments.html) cannot appear at the top level of an extending template: They produce HTML comments which would have nowhere to go in the resulting HTML. (Unbuffered Pug comments, however, can still go anywhere.)

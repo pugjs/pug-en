@@ -6,7 +6,7 @@ id: language/comments
 
 # Comments
 
-Single line comments look the same as JavaScript comments and must be placed on their own line:
+Buffered comments look the same as single-line JavaScript comments. They act sort of like markup tags, producing *HTML* comments in the rendered page. Like tags, buffered comments must appear on their own line.
 
 ```pug-preview
 // just some paragraphs
@@ -14,7 +14,7 @@ p foo
 p bar
 ```
 
-Pug also supports unbuffered comments, by simply adding a hyphen
+Pug also supports unbuffered comments, by simply adding a hyphen. These are only for commenting on the Pug code itself, and *do not* appear in the rendered HTML.
 
 ```pug-preview
 //- will not output within markup
@@ -28,9 +28,12 @@ A block comment is legal as well:
 
 ```pug-preview
 body
+  //-
+    Comments for your template writers.
+    Use as much text as you want.
   //
-    As much text as you want
-    can go here.
+    Comments for your HTML readers.
+    Use as much text as you want.
 ```
 
 ## Conditional Comments
