@@ -93,3 +93,5 @@ p
 p.
   If I do, whitespace is #[strong respected] and #[em everybody] is happy.
 ```
+
+See the whitespace section in the [Plain Text](plain-text.html#whitespace-control) page for more discussion on this topic.

@@ -37,3 +37,7 @@ Tags such as `img`, `meta`, and `link` are automatically self-closing (unless yo
 foo/
 foo(bar='baz')/
 ```
+
+## Rendered Whitespace For Inline Elements
+
+Inline (as opposed to block-level) HTML elements --- that is, elements that only contain ["phrasing content"](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#Phrasing_content) --- behave like [plain text](plain-text.html#whitespace-control) in Pug: By default, whitespace is removed at the beginning and end of the line.
