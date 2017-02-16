@@ -87,7 +87,30 @@ a ...sentence ending with a link
 
 If you need to *add* space, you have a few options:
 
-Depending on where you need the whitespace, you could add an extra space at the beginning of the plain text line (after the pipe for piped text). Or you could add a trailing space at the *end* of the plain text line. Less often, you might need extra space *inside the tag*, but it's the same idea --- extra spaces at the beginning of the text (after the tag), or at the end of the line. This may require configuring your code editor *not* to strip trailing spaces when you save, and you will need to make sure all contributors to your project do the same.
+### Recommended Solutions
+
+You could add one or more empty piped lines --- a pipe with either spaces or nothing after it. This will insert whitespace in the rendered HTML.
+
+```pug-preview
+| Don't
+|
+button#self-destruct touch
+|
+| me!
+```
+
+If your inline tags don't require many attributes, you may find it easiest to use tag interpolation, or literal HTML, within a plain text *block*.
+
+```pug-preview
+p.
+  Using regular tags can help keep your lines short,
+  but interpolated tags may be easier to #[em visualize]
+  whether the tags and text are whitespace-separated.
+```
+
+### Not recommended
+
+Depending on where you need the whitespace, you could add an extra space at the beginning of the plain text line (after the pipe for piped text). Or you could add a trailing space at the *end* of the plain text line. Less often, you might need extra space *inside the tag*, but it's the same idea --- extra spaces at the beginning of the text (after the tag), or at the end of the line.
 
 **NOTE** the trailing and leading spaces here:
 
@@ -97,17 +120,9 @@ a(href="http://example.biz/kitteh.png") this picture
 |  of my cat!
 ```
 
-You could add one or more "empty" piped line --- a pipe with either spaces or nothing after it. This will insert whitespace in the rendered HTML.
+The above solution works perfectly well, but is admittedly perhaps a little dangerous: Many code editors by default will *remove* trailing whitespace on save. You and all your contributors may have to configure your editors to prevent automatic trailing whitespace removal.
 
-```pug-preview
-| Don't
-|
-em touch
-|
-| me!
-```
-
-Another trick is to use string [interpolation](interpolation.html): `=` can be used to add a literal space or newline character to the rendered HTML.
+Another trick is to use [buffered code](code.html#buffered-code): This is a bit of a hack, but `=` can be used to add a literal space or newline character to the rendered HTML.
 
 ```pug-preview
 p
@@ -118,13 +133,4 @@ p
   | line
   = "\n"
   | line
-```
-
-Especially if your inline tags don't require many attributes, you may find it easiest to use tag interpolation, or literal HTML, within a plain text *block*.
-
-```pug-preview
-p.
-  Using regular tags helps keep your lines short,
-  but interpolated tags may be easier to #[em visualize]
-  whether the tags and text are whitespace-separated.
 ```
