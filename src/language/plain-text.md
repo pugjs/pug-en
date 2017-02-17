@@ -121,16 +121,3 @@ a(href="http://example.biz/kitteh.png") this picture
 ```
 
 The above solution works perfectly well, but is admittedly perhaps a little dangerous: Many code editors by default will *remove* trailing whitespace on save. You and all your contributors may have to configure your editors to prevent automatic trailing whitespace removal.
-
-Another trick is to use [buffered code](code.html#buffered-code): This is a bit of a hack, but `=` can be used to add a literal space or newline character to the rendered HTML.
-
-```pug-preview
-p
-  | space
-  = " "
-  | space
-p
-  | line
-  = "\n"
-  | line
-```
