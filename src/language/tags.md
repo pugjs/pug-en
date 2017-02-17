@@ -38,6 +38,6 @@ foo/
 foo(bar='baz')/
 ```
 
-## Rendered Whitespace For Inline Elements
+## Rendered Whitespace
 
-Inline (as opposed to block-level) HTML elements --- that is, elements that only contain ["phrasing content"](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#Phrasing_content) --- behave like [plain text](plain-text.html#whitespace-control) in Pug: By default, whitespace is removed at the beginning and end of the line.
+By default, whitespace is removed from the beginning and end of tags, so that you have control over whether the rendered HTML elements touch or not. Whitespace control is generally handled via [plain text](plain-text.html#whitespace-control).
