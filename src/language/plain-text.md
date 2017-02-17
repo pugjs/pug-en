@@ -66,7 +66,19 @@ div
 
 ## Whitespace Control
 
-Managing the whitespace of the rendered HTML is the trickiest part about learning Pug. By default, Pug removes spaces from the beginning and end of the lines for both inline-level tags and plain text lines and blocks. The value here is that it gives you full control over whether inline tags and/or plain text should touch. It even lets you place tags in the middle of words.
+Managing the whitespace of the rendered HTML is the trickiest part about learning Pug. Don't worry, though, you'll get the hang of it soon enough.
+
+You just need to remember two main points about how whitespace works. When compiling to HTML:
+
+1. Pug removes *indentation*, and all whitespace *between elements*.
+   * So, the closing tag of an HTML element will touch the opening tag of the next. This is generally not a problem for block-level elements like paragraphs, because they will still render as separate paragraphs in the web browser (unless you have changed their CSS `display` property). See the methods described below, however, for when you do need to insert space between elements.
+2. Pug *preserves* whitespace *within* elements, including:
+   * all whitespace in the middle of a line of text.
+   * leading whitespace beyond the block indentation.
+   * trailing whitespace.
+   * line breaks within a plain text block, or between consecutive piped lines.
+
+So. Pug drops the whitespace between tags, but keeps the whitespace inside them. The value here is that it gives you full control over whether tags and/or plain text should touch. It even lets you place tags in the middle of words.
 
 ```pug-preview
 | You put the em
@@ -76,9 +88,9 @@ em la
 | ble.
 ```
 
-The trade-off is that it *requires* you to think about and take control over whether tags and text touch. Don't worry, though, you'll get the hang of it soon enough.
+The trade-off is that it *requires* you to think about and take control over whether tags and text touch.
 
-If you need the text and/or inline-level tags to touch --- perhaps you need a period to appear outside the hyperlink at the end of a sentence --- this is easy, as it's basically what happens unless you tell Pug otherwise.
+If you need the text and/or tags to touch --- perhaps you need a period to appear outside the hyperlink at the end of a sentence --- this is easy, as it's basically what happens unless you tell Pug otherwise.
 
 ```pug-preview
 a ...sentence ending with a link
@@ -110,7 +122,7 @@ p.
 
 ### Not recommended
 
-Depending on where you need the whitespace, you could add an extra space at the beginning of the plain text line (after the pipe for piped text). Or you could add a trailing space at the *end* of the plain text line. Less often, you might need extra space *inside the tag*, but it's the same idea --- extra spaces at the beginning of the text (after the tag), or at the end of the line.
+Depending on where you need the whitespace, you could add an extra space at the beginning of the text (after the block indentation, pipe character, and/or tag). Or you could add a trailing space at the *end* of the text.
 
 **NOTE** the trailing and leading spaces here:
 
