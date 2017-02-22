@@ -37,3 +37,7 @@ Tags such as `img`, `meta`, and `link` are automatically self-closing (unless yo
 foo/
 foo(bar='baz')/
 ```
+
+## Rendered Whitespace
+
+Whitespace is removed from the beginning and end of tags, so that you have control over whether the rendered HTML elements touch or not. Whitespace control is generally handled via [plain text](plain-text.html#whitespace-control).

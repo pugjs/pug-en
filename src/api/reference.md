@@ -32,7 +32,7 @@ doctype
 ~ If the doctype is not specified as part of the template, you can specify it here. It is sometimes useful to get self-closing tags and remove mirroring of boolean attributes; see [doctype documentation](../language/doctype.html#doctype-option) for more information.
 pretty
 ~ boolean | string
-~ Adds whitespace to the resulting HTML to make it easier for a human to read using `'  '` as indentation. If a string is specified, that will be used as indentation instead (e.g. `'\t'`). Defaults to `false`.
+~ [Deprecated.] Adds whitespace to the resulting HTML to make it easier for a human to read using `'  '` as indentation. If a string is specified, that will be used as indentation instead (e.g. `'\t'`). We strongly recommend against using this option: Too often it creates subtle bugs in your templates because of the way it changes the interpretation and rendering of whitespace, and so this feature is going to be removed. Defaults to `false`.
 filters
 ~ object
 ~ Hash table of [custom filters](../language/filters.html#custom-filters). Defaults to `undefined`.
