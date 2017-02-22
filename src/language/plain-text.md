@@ -66,7 +66,7 @@ div
 
 ## Whitespace Control
 
-Managing the whitespace of the rendered HTML is the trickiest part about learning Pug. Don't worry, though, you'll get the hang of it soon enough.
+Managing the whitespace of the rendered HTML is one of the trickiest parts about learning Pug. Don't worry, though, you'll get the hang of it soon enough.
 
 You just need to remember two main points about how whitespace works. When compiling to HTML:
 
