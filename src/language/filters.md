@@ -57,6 +57,11 @@ p.
   appeared.
 ```
 
+
+## Filtered Includes
+
+You can also apply filters to external files, using the [include syntax](includes.html#including-filtered-text).
+
 ## Nested Filters
 
 Multiple filters can be applied to the same block of text by specifying them on the same line. The text is first passed to the last filter, whose result will be transformed by the second last, etc.
