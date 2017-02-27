@@ -57,7 +57,6 @@ p.
   appeared.
 ```
 
-
 ## Filtered Includes
 
 You can also apply filters to external files, using the [include syntax](includes.html#including-filtered-text).
