@@ -80,6 +80,8 @@ p.
   #[q(lang="es") ¡Hola Mundo!]
 ```
 
+You could accomplish the same thing by writing an HTML tag inline with your Pug, but then what's the point of writing the Pug? Wrap an inline Pug tag declaration in `#[` and `]` and it'll be evaluated and buffered into the content of its containing tag.
+
 Note that a tag is not required for interpolation to work.  If your variable is valid html or even a block of valid html, it can be inserted like so:
 
 ```pug-preview
@@ -93,8 +95,6 @@ head
   meta(charSet="UTF-8")
   != metaTags
 ```
-
-You could accomplish the same thing by writing an HTML tag inline with your Pug, but then what's the point of writing the Pug? Wrap an inline Pug tag declaration in `#[` and `]` and it'll be evaluated and buffered into the content of its containing tag.
 
 ### Whitespace Control
 
