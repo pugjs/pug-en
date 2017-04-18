@@ -26,7 +26,7 @@ html
 
 Now to extend the layout, simply create a new file and use the `extends` directive as shown below, giving the path. You may now define one or more blocks that will override the parent block content, note that here the `foot` block is *not* redefined and will output "some footer content".
 
-In Pug v1, if no file extension is given, `.pug` is automatically appended to the path, but in Pug v2 this is behavior is deprecated.
+If no file extension is given, `.pug` is automatically appended to the file name.
 
 ```pug
 //- page-a.pug
