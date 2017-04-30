@@ -6,9 +6,11 @@ id: language/plain-text
 
 # Plain Text
 
-Pug provides four ways of getting *plain text* --- that is, any code or text content that should go, mostly unprocessed, directly into the rendered HTML. They are useful in different situations. Plain text does still use tag and string [interpolation](interpolation.html), but the first word on the line is not a Pug tag. And because plain text is not escaped, you can also include literal HTML.
+Pug provides four ways of getting *plain text* --- that is, any code or text content that should go, mostly unprocessed, directly into the rendered HTML. They are useful in different situations. 
 
-One common pitfall here is managing whitespace in the rendered HTML. We will talk about that at the end of this page.
+Plain text does still use tag and string [interpolation](interpolation.html), but the first word on the line is not a Pug tag. And because plain text is not escaped, you can also include literal HTML.
+
+One common pitfall here is managing whitespace in the rendered HTML. We'll talk about that at the end of this page.
 
 ## Inline in a Tag
 
@@ -34,7 +36,7 @@ body
 
 ## Piped Text
 
-Another way to add plain text to templates is to prefix a line with a pipe character (`|`). This method is useful for mixing plain text with inline tags, as we discuss later in the Whitespace Control section.
+Another way to add plain text to templates is to prefix a line with a pipe character (`|`). This method is useful for mixing plain text with inline tags, as we discuss later, in the Whitespace Control section.
 
 ```pug-preview
 p
@@ -44,7 +46,9 @@ p
 
 ## Block in a Tag
 
-Often you might want large blocks of text within a tag.  A good example is writing JavaScript and CSS code in the `script` and `style` tags.  To do this, just add a `.` right after the tag name, or after the closing parenthesis, if the tag has [attributes](attributes.html). There should be no space between the tag and the dot. Plain text contents of the tag must be indented one level:
+Often you might want large blocks of text within a tag.  A good example is writing JavaScript and CSS code in the `script` and `style` tags.  To do this, just add a `.` right after the tag name, or after the closing parenthesis, if the tag has [attributes](attributes.html). 
+
+There should be no space between the tag and the dot. Plain text contents of the tag must be indented one level:
 
 ```pug-preview
 script.
@@ -78,7 +82,7 @@ You just need to remember two main points about how whitespace works. When compi
    * trailing whitespace.
    * line breaks within a plain text block, or between consecutive piped lines.
 
-So. Pug drops the whitespace between tags, but keeps the whitespace inside them. The value here is that it gives you full control over whether tags and/or plain text should touch. It even lets you place tags in the middle of words.
+So...Pug drops the whitespace between tags, but keeps the whitespace inside them. The value here is that it gives you full control over whether tags and/or plain text should touch. It even lets you place tags in the middle of words.
 
 ```pug-preview
 | You put the em
@@ -124,7 +128,7 @@ p.
 
 Depending on where you need the whitespace, you could add an extra space at the beginning of the text (after the block indentation, pipe character, and/or tag). Or you could add a trailing space at the *end* of the text.
 
-**NOTE** the trailing and leading spaces here:
+**NOTE the trailing and leading spaces here:**
 
 ```pug-preview
 | Hey, check out 
@@ -132,4 +136,4 @@ a(href="http://example.biz/kitteh.png") this picture
 |  of my cat!
 ```
 
-The above solution works perfectly well, but is admittedly perhaps a little dangerous: Many code editors by default will *remove* trailing whitespace on save. You and all your contributors may have to configure your editors to prevent automatic trailing whitespace removal.
+The above solution works perfectly well, but is admittedly perhaps a little dangerous: many code editors by default will *remove* trailing whitespace on save. You and all your contributors may have to configure your editors to prevent automatic trailing whitespace removal.

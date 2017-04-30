@@ -9,7 +9,7 @@ id: api/reference
 This page details how to render Pug using the JavaScript API.
 
 ::: float info Tip
-Pug is available in your Web browser's console! To test drive Pug's API, as documented on this page, try entering:
+**Pug is available in your Web browser's console!** To test drive Pug's API, as documented on this page, try entering:
 
 ```js
 pug.render('p Hello world!');
@@ -18,21 +18,21 @@ pug.render('p Hello world!');
 
 ## Options
 
-All API methods take the following set of options:
+All API methods accept the following set of options:
 
 ```parameter-list
 filename
 ~ string
-~ The name of the file being compiled. Used in exceptions, and required for relative includes and extends. Defaults to `'Pug'`.
+~ The name of the file being compiled. Used in exceptions, and required for relative `include`\s and `extend`\s. Defaults to `'Pug'`.
 basedir
 ~ string
 ~ The root directory of all absolute inclusion.
 doctype
 ~ string
-~ If the doctype is not specified as part of the template, you can specify it here. It is sometimes useful to get self-closing tags and remove mirroring of boolean attributes; see [doctype documentation](../language/doctype.html#doctype-option) for more information.
+~ If the `doctype` is not specified as part of the template, you can specify it here. It is sometimes useful to get self-closing tags and remove mirroring of boolean attributes. See [doctype documentation](../language/doctype.html#doctype-option) for more information.
 pretty
 ~ boolean | string
-~ [Deprecated.] Adds whitespace to the resulting HTML to make it easier for a human to read using `'  '` as indentation. If a string is specified, that will be used as indentation instead (e.g. `'\t'`). We strongly recommend against using this option: Too often it creates subtle bugs in your templates because of the way it changes the interpretation and rendering of whitespace, and so this feature is going to be removed. Defaults to `false`.
+~ [Deprecated.] Adds whitespace to the resulting HTML to make it easier for a human to read using `'  '` as indentation. If a string is specified, that will be used as indentation instead (e.g. `'\t'`). We strongly recommend against using this option. Too often, it creates subtle bugs in your templates because of the way it alters the interpretation and rendering of whitespace, and so this feature is going to be removed. Defaults to `false`.
 filters
 ~ object
 ~ Hash table of [custom filters](../language/filters.html#custom-filters). Defaults to `undefined`.
@@ -44,7 +44,7 @@ debug
 ~ If set to `true`, the tokens and function body are logged to stdout.
 compileDebug
 ~ boolean
-~ If set to `true`, the function source will be included in the compiled template for better error messages (sometimes useful in development). It is enabled by default unless used with [Express](https://expressjs.com/) in production mode.
+~ If set to `true`, the function source will be included in the compiled template for better error messages (sometimes useful in development). It is enabled by default, unless used with [Express](https://expressjs.com/) in production mode.
 globals
 ~ Array<string>
 ~ Add a list of global names to make accessible in templates.
@@ -53,7 +53,7 @@ cache
 ~ If set to `true`, compiled functions are cached. `filename` must be set as the cache key. Only applies to `render` functions. Defaults to `false`.
 inlineRuntimeFunctions
 ~ boolean
-~ Inline runtime functions instead of `require`-ing them from a shared version. For `compileClient` functions, the default is `true` so that one does not have to include the runtime. For all other compilation or rendering types, the default is `false`.
+~ Inline runtime functions instead of `require`-ing them from a shared version. For `compileClient` functions, the default is `true` (so that one does not have to include the runtime). For all other compilation or rendering types, the default is `false`.
 name
 ~ string
 ~ The name of the template function. Only applies to `compileClient` functions. Defaults to `'template'`.
@@ -63,7 +63,7 @@ name
 
 ### pug.compile(source, ?options)
 
-Compile a Pug template to a function which can be rendered multiple times with different locals.
+Compile a Pug template to a function, which can be rendered multiple times with different locals.
 
 ```parameter-list
 source
@@ -93,7 +93,7 @@ var html = fn(locals);
 
 ### pug.compileFile(path, ?options)
 
-Compile a Pug template from a file to a function which can be rendered multiple times with different locals.
+Compile a Pug template from a file to a function, which can be rendered multiple times with different locals.
 
 ```parameter-list
 path
@@ -123,7 +123,7 @@ var html = fn(locals);
 
 ### pug.compileClient(source, ?options)
 
-Compile a Pug template to a string of JavaScript that can be used client side along with the Pug runtime.
+Compile a Pug template to a string of JavaScript, which can be used client side along with the Pug runtime.
 
 ```parameter-list
 source
@@ -153,7 +153,7 @@ var html = fn(locals);
 
 ### pug.compileClientWithDependenciesTracked(source, ?options)
 
-Same as <code>[compileClient]</code> except that this method returns an object of the form:
+Same as <code>[compileClient]</code>, except that this method returns an object of the form:
 
 ```js
 {
@@ -177,7 +177,7 @@ options
 ~ An options object
 options.name
 ~ string
-~ If you pass a `.name` property on the options object, it will be used as the function name for your client side template function.
+~ If you pass a `.name` property on the options object, it will be used as the name of your client side template function.
 ```
 
 ```parameter-list (returns)

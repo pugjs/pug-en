@@ -18,7 +18,7 @@ Pug provides operators for a variety of your different interpolative needs.
 
 ## String Interpolation, Escaped
 
-Consider the placement of the template locals `title`, `author`, and `theGreat` in the following template.
+Consider the placement of the following template's locals: `title`, `author`, and `theGreat`.
 
 ```pug-preview
 - var title = "On Dogs: Man's Best Friend";
@@ -45,7 +45,7 @@ Pug is smart enough to figure out where the expression ends, so you can even inc
 p No escaping for #{'}'}!
 ```
 
-If you need to include verbatim `#{`, you can either escape it or use interpolation (so meta!).
+If you need to include a verbatim `#{`, you can either escape it, or use interpolation. (So meta!)
 
 ```pug-preview
 p Escaping works with \#{interpolation}
@@ -63,12 +63,12 @@ You don't *have* to play it safe. You can buffer unescaped values into your temp
 ```
 
 ::: float danger Caution
-Keep in mind that buffering unescaped content into your templates can be mighty risky if that content comes fresh from your users.  Never trust user input!
+**Keep in mind that buffering unescaped content into your templates can be mighty risky if that content comes fresh from your users.**  Never trust user input!
 :::
 
 ## Tag Interpolation
 
-Interpolation works not only on JavaScript values, but on Pug as well using the tag interpolation syntax. It is used like so:
+Interpolation works not only on JavaScript values, but on Pug as well. Just use the tag interpolation syntax, like so:
 
 ```pug-preview
 p.
@@ -80,11 +80,13 @@ p.
   #[q(lang="es") ¡Hola Mundo!]
 ```
 
-You could accomplish the same thing by writing an HTML tag inline with your Pug, but then what's the point of writing the Pug? Wrap an inline Pug tag declaration in `#[` and `]` and it'll be evaluated and buffered into the content of its containing tag.
+You could accomplish the same thing by writing an HTML tag inline with your Pug...but then, what's the point of writing the Pug? Wrap an inline Pug tag declaration in `#[` and `]`, and it'll be evaluated and buffered into the content of its containing tag.
 
 ### Whitespace Control
 
-The tag interpolation syntax is especially useful for inline tags, where whitespace before and after the tag is significant. By default, however, Pug removes all spaces before and after tags. Check out the following example:
+The tag interpolation syntax is especially useful for inline tags, where whitespace before and after the tag is significant. 
+
+By default, however, Pug removes all spaces before and after tags. Check out the following example:
 
 ```pug-preview
 p
