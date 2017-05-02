@@ -6,9 +6,9 @@ id: language/attributes
 
 # Attributes
 
-Tag attributes look similar to html (with optional comma), but their values are just regular JavaScript.
+Tag attributes look similar to HTML (with optional commas), but their values are just regular JavaScript.
 
-(NOTE: In the examples on this page, lines containing a pipe character (`|`) are used for [whitespace control](plain-text.html#whitespace-control).)
+(NOTE: Examples on this page use the pipe character (`|`) for [whitespace control](plain-text.html#whitespace-control).)
 
 ```pug-preview
 a(href='google.com') Google
@@ -20,7 +20,7 @@ a(class='button' href='google.com') Google
 a(class='button', href='google.com') Google
 ```
 
-All the normal JavaScript expressions work fine too:
+Normal JavaScript expressions work fine, too:
 
 ```pug-preview
 - var authenticated = true
@@ -39,7 +39,7 @@ input(
 )
 ```
 
-If you have a single very long attribute, and your JavaScript runtime supports ES2015 [template strings] (including Node.js/io.js 1.0.0 and later), you can utilize that syntax for attributes:
+If your JavaScript runtime supports ES2015 [template strings] (including Node.js/io.js 1.0.0 and later), you can use that syntax for attributes. This is really useful for attributes with really long values:
 
 ```pug-preview (features=['templatestrings'])
 input(data-json=`
@@ -52,7 +52,7 @@ input(data-json=`
 
 ## Quoted Attributes
 
-If your attribute name contains odd characters that might interfere with JavaScript syntax, either quote it using `""` or `''`, or use commas to separate different attributes. Examples of such characters include `[]` and `()`, which are frequently used in Angular 2.
+If your attribute name contains odd characters that might interfere with JavaScript syntax, either quote it using `""` or `''`, or use commas to separate different attributes. Examples of such characters include `[]` and `()` (frequently used in Angular 2).
 
 ```pug-preview
 //- In this case, `(click)` is treated as a
@@ -75,10 +75,10 @@ Previous versions of Pug/Jade supported an interpolation syntax such as:
 a(href="/#{url}") Link
 ```
 
-This syntax is **no longer supported.** Alternatives could be found below. Check our [migration guide] for more information on other incompatibilities between Pug v2 and previous versions.
+This syntax is **no longer supported.** Alternatives are found below. (Check our [migration guide] for more information on other incompatibilities between Pug v2 and previous versions.)
 :::
 
-If you would like to include variables in your attribute, you can do one of the following:
+Here are some alternatives you can use to include variables in your attribute:
 
 1. Simply write the attribute in JavaScript:
 
@@ -91,7 +91,7 @@ If you would like to include variables in your attribute, you can do one of the 
    a(href=url) Another link
    ```
 
-2. If your JavaScript runtime supports ES2015 [template strings] (including Node.js/io.js 1.0.0 and later), you can also utilize that syntax to simplify your attributes:
+2. If your JavaScript runtime supports ES2015 [template strings] (including Node.js/io.js 1.0.0 and later), you can also use its syntax to simplify your attributes:
 
    ```pug-preview (features=['templatestrings'])
    - var btnType = 'info'
@@ -104,7 +104,7 @@ If you would like to include variables in your attribute, you can do one of the 
 
 ## Unescaped Attributes
 
-By default, all attributes are escaped (replacing special characters with escape sequences) to prevent attacks such as cross site scripting.  If you need to use special characters you can use `!=` instead of `=`.
+By default, all attributes are escaped&mdash;that is,special characters are replaced with escape sequences&mdash;to prevent attacks (such as cross site scripting).  If you need to use special characters, use `!=` instead of `=`.
 
 ```pug-preview
 div(escaped="<code>")
@@ -112,12 +112,12 @@ div(unescaped!="<code>")
 ```
 
 ::: float danger Caution
-Unescaped buffered code can be dangerous. You must be sure to sanitize any user inputs to avoid [cross-site scripting].
+**Unescaped buffered code can be dangerous.** You must be sure to sanitize any user inputs to avoid [cross-site scripting].
 :::
 
 ## Boolean Attributes
 
-Boolean attributes are mirrored by Pug, and boolean values (`true` and `false`) are accepted. When no value is specified `true` is assumed.
+Boolean attributes are mirrored by Pug. Boolean values (`true` and `false`) are accepted. When no value is specified `true` is assumed.
 
 ```pug-preview
 input(type='checkbox' checked)
@@ -132,7 +132,7 @@ input(type='checkbox' checked=false)
 input(type='checkbox' checked=true.toString())
 ```
 
-If the doctype is `html` Pug knows not to mirror the attribute and uses the terse style (understood by all browsers).
+If the doctype is `html`, Pug knows not to mirror the attribute, and instead uses the terse style (understood by all browsers).
 
 ```pug-preview
 doctype html
@@ -152,7 +152,7 @@ input(type='checkbox' checked=true && 'checked')
 
 ## Style Attributes
 
-The `style` attribute can be a string (like any normal attribute) but it can also be an object, which is handy when parts of the style are generated by JavaScript.
+The `style` attribute can be a string, like any normal attribute; but it can also be an object, which is handy when styles are generated by JavaScript.
 
 
 ```pug-preview
@@ -161,7 +161,7 @@ a(style={color: 'red', background: 'green'})
 
 ## Class Attributes
 
-The `class` attribute can be a string (like any normal attribute) but it can also be an array of class names, which is handy when generated from JavaScript.
+The `class` attribute can be a string, like any normal attribute; but it can also be an array of class names, which is handy when generated from JavaScript.
 
 ```pug-preview
 - var classes = ['foo', 'bar', 'baz']
@@ -172,7 +172,7 @@ a(class=classes)
 a.bang(class=classes class=['bing'])
 ```
 
-It can also be an object mapping class names to true or false values, which is useful for applying conditional classes
+It can also be an object which maps class names to `true` or `false` values. This is useful for applying conditional classes
 
 ```pug-preview
 - var currentUrl = '/about'
@@ -218,7 +218,7 @@ Pronounced as "and attributes", the `&attributes` syntax can be used to explode 
 div#foo(data-bar="foo")&attributes({'data-foo': 'bar'})
 ```
 
-The object does not have to be an object literal. It can also just be a variable that has an object as its value (see also [Mixin Attributes]).
+The above example uses an object literal. But you can also use a variable whose value is an object, too. (See also: [Mixin Attributes]).
 
 ```pug-preview
 - var attributes = {};
@@ -227,7 +227,7 @@ div#foo(data-bar="foo")&attributes(attributes)
 ```
 
 ::: float danger Caution
-Attributes applied using `&attributes` are not automatically escaped. You must be sure to sanitize any user inputs to avoid [cross-site scripting] (XSS). This is done for you if you are passing in `attributes` from a mixin call.
+**Attributes applied using `&attributes` are not automatically escaped.** You must be sure to sanitize any user inputs to avoid [cross-site scripting] (XSS). If passing in `attributes` from a mixin call, this is done automatically.
 :::
 
 [template strings]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals

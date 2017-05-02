@@ -10,9 +10,13 @@ Pug fully integrates with [Express], a popular Node.js web framework, as a suppo
 
 ## Production Defaults
 
-In Express, the environmental variable `NODE_ENV` is designed to inform the web application of the execution environment: whether it is in development or in production. Express and Pug automatically modifies the defaults of a few options in production environment, to provide a better out-of-the-box experience for users. Specifically, when `process.env.NODE_ENV` is set to `'production'`, and Pug is used with Express, the <code>[compileDebug]</code> option is `false` by default, while the <code>[cache]</code> option is `true`.
+In Express, the environmental variable `NODE_ENV` is designed to inform the web application of the execution environment: whether it is in development or in production. Express and Pug automatically modify the defaults of a few options in production environment, to provide a better out-of-the-box experience for users. 
 
-To override the defaults for `compileDebug` and `cache`, you can set the respective property in `app.locals` or `res.locals` objects to `true` or `false`. The `cache` option can also be overriden through Express's `app.disable`/`enable('view cache')`. For more details, check Express's [API reference][Express API].
+Specifically, when `process.env.NODE_ENV` is set to `'production'`, and Pug is used with Express, the <code>[compileDebug]</code> option is `false` by default, while the <code>[cache]</code> option is `true`.
+
+To override the defaults for `compileDebug` and `cache`, you can set the respective property in `app.locals` or `res.locals` objects to `true` or `false`. The `cache` option can also be overriden through Express's `app.disable`/`enable('view cache')`. 
+
+For more details, check Express's [API reference][Express API].
 
 [compileDebug]: reference.html#options
 [cache]: reference.html#options

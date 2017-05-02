@@ -27,9 +27,9 @@ doctype html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
 
 ## Doctype Option
 
-In addition to being buffered in the output, a doctype in Pug can affect compilation in other ways. For example, whether self-closing tags end with `/>` or `>` depends on whether HTML or XML is specified. The output of [boolean attributes] could be affected as well.
+In addition to being buffered in the output, a doctype in Pug can affect compilation in other ways. For example, whether self-closing tags end with `/>` or `>` depends on whether HTML or XML is specified. The output of [boolean attributes] may be affected as well.
 
-If, for whatever reason, it is not possible to use the `doctype` keyword (e.g. rendering HTML fragments), but you would still like to specify the doctype of the template, you could do so via the [`doctype` option].
+If, for whatever reason, it is not possible to use the `doctype` keyword (e.g., just rendering HTML fragments), but you would still like to specify the doctype of the template, you can do so via the [`doctype` option].
 
 ```js
 var pug = require('./');

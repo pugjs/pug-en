@@ -6,11 +6,11 @@ id: language/iteration
 
 # Iteration
 
-Pug supports two primary methods of iteration, `each` and `while`.
+Pug supports two primary methods of iteration: `each` and `while`.
 
 ## each
 
-Pug's first-class iteration syntax makes it easier to iterate over arrays and objects within a template:
+Pug's first-class iteration syntax makes it easier to iterate over arrays and objects in a template:
 
 ```pug-preview
 ul
@@ -34,7 +34,7 @@ ul
     li= index + ': ' + val
 ```
 
-The object or array to iterate over is just plain JavaScript so it can be a variable or the result of a function call or almost anything else.
+The object or array to iterate over is just plain JavaScript. So, it can be a variable, or the result of a function call, or almost anything else.
 
 ```pug-preview
 - var values = [];
@@ -43,7 +43,7 @@ ul
     li= val
 ```
 
-One can also add an `else` block that will be executed if the array or object does not contain values to be iterated over. The following is equivalent to the example above:
+One can also add an `else` block that will be executed if the array or object does not contain values to iterate over. The following is equivalent to the example above:
 
 ```pug-preview
 - var values = [];

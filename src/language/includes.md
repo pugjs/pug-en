@@ -30,13 +30,13 @@ footer#footer
   p Copyright (c) foobar
 ```
 
-The path of the included file, if specified absolutely (e.g. `include /root.pug`), is resolved by prepending `options.basedir` to the file name provided. Otherwise, the path is relative to the current file being compiled.
+If the path is absolute (e.g., `include /root.pug`), it is resolved by prepending `options.basedir`. Otherwise, paths are resolved relative to the current file being compiled.
 
 If no file extension is given, `.pug` is automatically appended to the file name.
 
 ## Including Plain Text
 
-Including files that are not Pug just includes the raw text.
+Including non-Pug files simply includes their raw text.
 
 ```pug-preview
 \\\\\\\\\\ index.pug
@@ -63,7 +63,7 @@ console.log('You are awesome');
 
 ## Including Filtered Text
 
-You can combine filters with includes to filter things as you include them.
+You can combine filters with includes, allowing you to filter things as you include them.
 
 ```pug-preview-readonly
 \\\\\\\\\\ index.pug <

@@ -20,7 +20,7 @@ mixin list
 +list
 ```
 
-They are compiled to functions and can take arguments:
+Mixins are compiled to functions, and can take arguments:
 
 ```pug-preview
 mixin pet(name)
@@ -33,7 +33,7 @@ ul
 
 ## Mixin Blocks
 
-Mixins can also take a block of pug to act as the content:
+Mixins can also take a block of Pug to act as the content:
 
 ```pug-preview
 mixin article(title)
@@ -54,7 +54,7 @@ mixin article(title)
 
 ## Mixin Attributes
 
-Mixins also get an implicit attributes argument taken from the attributes passed to the mixin:
+Mixins also get an implicit `attributes` argument, which is taken from the attributes passed to the mixin:
 
 ```pug-preview
 mixin link(href, name)
@@ -65,7 +65,7 @@ mixin link(href, name)
 ```
 
 ::: float info Note
-The values in `attributes` by default are already escaped so you should use `!=` to avoid escaping them a second time (see also [unescaped attributes]).
+**The values in `attributes` by default are already escaped!** You should use `!=` to avoid escaping them a second time. (See also [unescaped attributes].)
 :::
 
 You can also use mixins with [`&attributes`]:
@@ -78,12 +78,12 @@ mixin link(href, name)
 ```
 
 ::: float info Note
-The syntax `+link(class="btn")` is also valid and equivalent to `+link()(class="btn")` since Pug try to detect if parentheses contents are attributes or arguments but we encourage you to use the second syntax as you pass explicitly no arguments and you ensure the first parenthesis is the arguments list.
+The syntax `+link(class="btn")` is also valid and equivalent to `+link()(class="btn")`, since Pug tries to detect if parentheses' contents are attributes or arguments. Nevertheless, we encourage you to use the second syntax, as you pass explicitly no arguments and you ensure the first parenthesis is the arguments list.
 :::
 
 ## Rest Arguments
 
-You can write mixins that take an unknown number of arguments using the "rest arguments" syntax.  e.g.
+You can write mixins that take an unknown number of arguments using the "rest arguments" syntax.
 
 ```pug-preview
 mixin list(id, ...items)

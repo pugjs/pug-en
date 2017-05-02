@@ -6,11 +6,11 @@ id: language/code
 
 # Code
 
-Pug makes it possible to write inline JavaScript code in your templates. There are three types of code.
+Pug allows you to write inline JavaScript code in your templates. There are three types of code: Unbuffered, Buffered, and Unescaped Buffered.
 
 ## Unbuffered Code
 
-Unbuffered code starts with `-` does not add any output directly, e.g.
+Unbuffered code starts with `-`. It does not directly add anything to the output.
 
 ```pug-preview
 - for (var x = 0; x < 3; x++)
@@ -29,7 +29,7 @@ each item in list
 
 ## Buffered Code
 
-Buffered code starts with `=` and outputs the result of evaluating the JavaScript expression in the template. For security, it is first HTML escaped:
+Buffered code starts with `=`. It evaluates the JavaScript expression and outputs the result. For security, buffered code is first HTML escaped.
 
 ```pug-preview
 p
@@ -44,21 +44,21 @@ p= 'This code is' + ' <escaped>!'
 
 ## Unescaped Buffered Code
 
-Unescaped buffered code starts with `!=` and outputs the result of evaluating the JavaScript expression in the template. This does not do any escaping, so is not safe for user input:
+Unescaped buffered code starts with `!=`. It evaluates the JavaScript expression and outputs the result. Unescaped buffered code does not perform any escaping, so is unsafe for user input:
 
 ```pug-preview
 p
   != 'This code is <strong>not</strong> escaped!'
 ```
 
-It can also be written inline with attributes, and supports the full range of JavaScript expressions:
+Unescaped buffered code can also be written inline with attributes, and supports the full range of JavaScript expressions:
 
 ```pug-preview
 p!= 'This code is' + ' <strong>not</strong> escaped!'
 ```
 
 ::: float danger Caution
-Unescaped buffered code can be dangerous. You must be sure to sanitize any user
+**Unescaped buffered code can be dangerous.** You must be sure to sanitize any user
 inputs to avoid [cross-site scripting] (XSS).
 :::
 

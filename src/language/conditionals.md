@@ -6,7 +6,9 @@ id: language/conditionals
 
 # Conditionals
 
-Pug's first-class conditional syntax allows for optional parenthesis, and you may now omit the leading `-` otherwise it's identical, still just regular javascript:
+Pug's first-class conditional syntax allows for optional parentheses. 
+
+If you’re coming from Pug v1, you may now omit the leading `-`. Otherwise, it's identical (just regular JavaScript):
 
 ```pug-preview
 - var user = { description: 'foo bar baz' }
@@ -25,7 +27,7 @@ Pug's first-class conditional syntax allows for optional parenthesis, and you ma
     p.description User has no description
 ```
 
-Pug also provides a negated version `unless` (the following are therefore equivalent):
+Pug also provides the conditional `unless`, which works like a negated `if`.  The following are equivalent:
 
 ```pug-preview-readonly
 \\\\\\\\\\ a.pug <
