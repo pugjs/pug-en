@@ -68,6 +68,7 @@ div(class='div-class' '(click)'='play()')
 
 ## Attribute Interpolation
 
+<div style="padding: 20px; border: 3px solid #ff8080; background: #fff9f9;">
 ::: float danger Caution
 Previous versions of Pug/Jade supported an interpolation syntax such as:
 
@@ -77,6 +78,7 @@ a(href="/#{url}") Link
 
 This syntax is **no longer supported.** Alternatives are found below. (Check our [migration guide] for more information on other incompatibilities between Pug v2 and previous versions.)
 :::
+</div>
 
 Here are some alternatives you can use to include variables in your attribute:
 
