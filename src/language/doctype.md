@@ -32,7 +32,7 @@ In addition to being buffered in the output, a doctype in Pug can affect compila
 If, for whatever reason, it is not possible to use the `doctype` keyword (e.g., just rendering HTML fragments), but you would still like to specify the doctype of the template, you can do so via the [`doctype` option].
 
 ```js
-var pug = require('./');
+var pug = require('pug');
 
 var source = 'img(src="foo.png")';
 
