@@ -81,6 +81,23 @@ mixin link(href, name)
 The syntax `+link(class="btn")` is also valid and equivalent to `+link()(class="btn")`, since Pug tries to detect if parentheses' contents are attributes or arguments. Nevertheless, we encourage you to use the second syntax, as you pass explicitly no arguments and you ensure the first parenthesis is the arguments list.
 :::
 
+## Default Argument's Values
+
+You can also set default values for you `arguments`. Same as setting *default function parameters* in ES6.
+
+```pug-preview
+//- Declaration
+mixin article(title='Default Title')
+  .article
+    .article-wrapper
+      h1= title
+
+//- Use
++article()
+
++article('Hello world')
+```
+
 ## Rest Arguments
 
 You can write mixins that take an unknown number of arguments using the "rest arguments" syntax.
