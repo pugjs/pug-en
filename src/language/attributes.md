@@ -11,13 +11,13 @@ Tag attributes look similar to HTML (with optional commas), but their values are
 (NOTE: Examples on this page use the pipe character (`|`) for [whitespace control](plain-text.html#whitespace-control).)
 
 ```pug-preview
-a(href='google.com') Google
+a(href='//google.com') Google
 |
 |
-a(class='button' href='google.com') Google
+a(class='button' href='//google.com') Google
 |
 |
-a(class='button', href='google.com') Google
+a(class='button', href='//google.com') Google
 ```
 
 Normal JavaScript expressions work fine, too:
