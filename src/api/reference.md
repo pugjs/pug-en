@@ -123,7 +123,7 @@ var html = fn(locals);
 
 ### pug.compileClient(source, ?options)
 
-Compile a Pug template to a string of JavaScript, which can be used client side along with the Pug runtime.
+Compile a Pug template to a string of JavaScript, which can be used client side.
 
 ```parameter-list
 source
@@ -166,7 +166,7 @@ You should only use this method if you need `dependencies` to implement somethin
 
 ### pug.compileFileClient(path, ?options)
 
-Compile a Pug template file to a string of JavaScript that can be used client side along with the Pug runtime.
+Compile a Pug template file to a string of JavaScript that can be used client side.
 
 ```parameter-list
 path
@@ -229,13 +229,10 @@ function fancyTemplateFun(locals) {
 }
 ```
 
-Be sure to send the Pug runtime (`node_modules/pug/runtime.js`) to the client in addition to the template that you just compiled.
-
 ```html
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="/runtime.js"></script>
     <script src="/templates.js"></script>
   </head>
 
