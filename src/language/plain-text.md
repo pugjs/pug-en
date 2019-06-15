@@ -12,12 +12,22 @@ Plain text does still use tag and string [interpolation](interpolation.html), bu
 
 One common pitfall here is managing whitespace in the rendered HTML. We'll talk about that at the end of this page.
 
-## Inline in a Tag
+## Free text
 
-The easiest way to add plain text is *inline*. The first term on the line is the tag itself. Everything after the tag and one space will be the text contents of that tag. This is most useful when the plain text content is short (or if you don't mind lines running long).
+Simple free text can be added to the page, without a tag, by using a pipe. Note: Free text like this has various caveats regarding styling, etc.
 
 ```pug-preview
-p This is plain old <em>text</em> content.
+div 
+  | This is plain old free text.
+```
+
+
+## Inline in a Tag
+
+The easiest way to add plain text is *inline*. The first term on the line is the tag itself. Add the tag, then one space, and then the text contents of that tag. This is most useful when the plain text content is short (or if you don't mind lines running long).
+
+```pug-preview
+p This is paragraph <em>text</em> content.
 ```
 
 ## Literal HTML

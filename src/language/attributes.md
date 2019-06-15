@@ -169,7 +169,7 @@ a(class=classes)
 |
 |
 //- the class attribute may also be repeated to merge arrays
-a.bang(class=classes class=['bing'])
+a(class=classes class=['bing'])
 ```
 
 It can also be an object which maps class names to `true` or `false` values. This is useful for applying conditional classes
@@ -187,14 +187,24 @@ a(class={active: currentUrl === '/about'} href='/about') About
 Classes may be defined using a `.classname` syntax:
 
 ```pug-preview
-a.button
+a.button.important
 ```
 
 Since `div`'s are such a common choice of tag, it is the default if you omit the tag name:
 
 ```pug-preview
-.content
+.content.admin
 ```
+
+## Class Literal and Attributes used together
+These can be pulled together in a massive, highly readable, element defining Class Chain of Doom.
+
+```pug-preview
+- var classes = ['foo', 'bar', 'baz']
+- var currentUrl = '/about'
+a.bang.bong(class=classes class=['bing'] class={active: currentUrl === '/about'} href='/about') About
+```
+
 
 ## ID Literal
 
