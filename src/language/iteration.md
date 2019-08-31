@@ -30,7 +30,7 @@ Pug also lets you iterate over the keys in an object:
 
 ```pug-preview
 ul
-  each val, index in {1:'one',2:'two',3:'three'}
+  each val, index in {1: 'one', 2: 'two', 3: 'three'}
     li= index + ': ' + val
 ```
 
