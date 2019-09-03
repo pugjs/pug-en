@@ -11,7 +11,7 @@ Pug's first-class conditional syntax allows for optional parentheses.
 If you’re coming from Pug v1, you may now omit the leading `-`. Otherwise, it's identical (just regular JavaScript):
 
 ```pug-preview
-- var user = { description: 'foo bar baz' }
+- var user = {description: 'foo bar baz'}
 - var authorised = false
 #user
   if user.description

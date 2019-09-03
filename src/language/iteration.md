@@ -30,8 +30,8 @@ Pug also lets you iterate over the keys in an object:
 
 ```pug-preview
 ul
-  each val, index in {1:'one',2:'two',3:'three'}
-    li= index + ': ' + val
+  each val, key in {1: 'one', 2: 'two', 3: 'three'}
+    li= key + ': ' + val
 ```
 
 The object or array to iterate over is just plain JavaScript. So, it can be a variable, or the result of a function call, or almost anything else.
