@@ -19,7 +19,10 @@
     "language/iteration": "Iteration",
     "language/mixins": "Mixins",
     "language/plain-text": "Plain Text",
-    "language/tags": "Tags"
+    "language/tags": "Tags",
+    "support": "Support",
+    "support/community": "Community Support",
+    "support/enterprise": "Enterprise Support"
   },
   "navbar": {
     "docs": "Docs",
