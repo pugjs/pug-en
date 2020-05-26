@@ -5,6 +5,7 @@
     "api/express": "Express Integration",
     "api/reference": "Reference",
     "api/migration-v2": "Migrating to Pug 2",
+    "api/migration-v3": "Migrating to Pug 3",
     "language": "Language Reference",
     "language/attributes": "Attributes",
     "language/case": "Case",

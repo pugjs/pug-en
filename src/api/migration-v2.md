@@ -8,7 +8,7 @@ id: api/migration-v2
 
 Pug 2 was released in August 2016. To make improvements in the new release possible, we had to make the decision of deprecating or removing some APIs and undocumented language features. We made an effort to make these changes as unintrusive as possible, and many of these changes were previously discouraged in console warnings.
 
-This article details how you can convert your application to the latest version of Pug.
+This article details how you can convert your application to Pug v2 from Jade.
 
 ## Project Rename
 
