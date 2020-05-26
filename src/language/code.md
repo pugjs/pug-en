@@ -36,10 +36,11 @@ p
   = 'This code is <escaped>!'
 ```
 
-It can also be written inline with attributes, and supports the full range of JavaScript expressions:
+It can also be written inline (after any attributes), and supports the full range of JavaScript expressions:
 
 ```pug-preview
 p= 'This code is' + ' <escaped>!'
+p(style="background: blue")= 'A message with a ' + 'blue' + ' background'
 ```
 
 ## Unescaped Buffered Code
