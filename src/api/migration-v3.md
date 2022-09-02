@@ -1,5 +1,5 @@
 ---
-title: Migrating to Pug 2
+title: Migrating to Pug 3 (from Pug 2)
 template: generic
 id: api/migration-v3
 ---
