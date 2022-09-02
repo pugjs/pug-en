@@ -100,3 +100,39 @@ p.
 ```
 
 See the whitespace section in the [Plain Text](plain-text.html#whitespace-control) page for more discussion on this topic.
+
+## Attribute Interpolation
+
+::: float danger Caution
+Previous versions of Pug/Jade supported an interpolation syntax such as:
+
+```pug
+a(href="/#{url}") Link
+```
+
+This syntax is **no longer supported.** Alternatives are found below. (Check our [migration guide] for more information on other incompatibilities between Pug v2 and previous versions.)
+:::
+
+Here are some alternatives you can use to include variables in your attribute:
+
+1. Simply write the attribute in JavaScript:
+
+   ```pug-preview
+   - var url = 'pug-test.html';
+   a(href='/' + url) Link
+   |
+   |
+   - url = 'https://example.com/'
+   a(href=url) Another link
+   ```
+
+2. If your JavaScript runtime supports ES2015 [template strings] (including Node.js/io.js 1.0.0 and later), you can also use its syntax to simplify your attributes:
+
+   ```pug-preview (features=['templatestrings'])
+   - var btnType = 'info'
+   - var btnSize = 'lg'
+   button(type='button' class='btn btn-' + btnType + ' btn-' + btnSize)
+   |
+   |
+   button(type='button' class=`btn btn-${btnType} btn-${btnSize}`)
+   ```
