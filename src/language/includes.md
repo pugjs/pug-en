@@ -30,7 +30,7 @@ footer#footer
   p Copyright (c) foobar
 ```
 
-If the path is absolute (e.g., `include /root.pug`), it is resolved by prepending `options.basedir`. Otherwise, paths are resolved relative to the current file being compiled.
+If the path is absolute (e.g., `include /root.pug`), it is resolved by prepending `options.basedir` (e.g., `pug.compileFile(path, {basedir: __basedir})`). Otherwise, paths are resolved relative to the current file being compiled.
 
 If no file extension is given, `.pug` is automatically appended to the file name.
 
