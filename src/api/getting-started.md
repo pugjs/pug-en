@@ -11,7 +11,7 @@ id: api/getting-started
 Pug is available via [npm]:
 
 ```sh
-$ npm install pug
+$ npm install pug pug-cli
 ```
 
 [npm]: https://www.npmjs.com/
