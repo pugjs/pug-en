@@ -83,7 +83,7 @@ The syntax `+link(class="btn")` is also valid and equivalent to `+link()(class="
 
 ## Default Argument's Values
 
-You can also set default values for you `arguments`. Same as setting *default function parameters* in ES6.
+You can also set default values for your `arguments`. Same as setting *default function parameters* in ES6.
 
 ```pug-preview
 //- Declaration
