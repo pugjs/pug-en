@@ -110,7 +110,7 @@ When using `block append` or `block prepend`, the word “`block`” is optional
 
 ```pug
 //- page.pug
-extends layout
+extends layout.pug
 
 append head
   script(src='/vendor/three.js')
