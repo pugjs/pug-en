@@ -227,7 +227,7 @@ div#foo(data-bar="foo")&attributes(attributes)
 ```
 
 ::: float danger Caution
-**Attributes applied using `&attributes` are not automatically escaped.** You must be sure to sanitize any user inputs to avoid [cross-site scripting] (XSS). If passing in `attributes` from a mixin call, this is done automatically.
+**Attributes applied using `&attributes` are not automatically escaped, names and values alike.** You must be sure to sanitize any user inputs to avoid [cross-site scripting] (XSS). If passing in `attributes` from a mixin call, the values of attributes written on the call, such as `+link('/foo', 'foo')(title=userInput)`, are escaped automatically; attribute names, and anything passed to the mixin with `&attributes`, are not.
 :::
 
 [template strings]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
